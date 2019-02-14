@@ -55,10 +55,10 @@ public class CatTest {
 
         // When (we retrieve the data from the cat)
         cat.setName(givenName);
-        String expected = cat.getName();
+        String actual = cat.getName();
 
         // Then (we expect the given data, to match the retrieved data)
-        Assert.assertEquals(givenName, expected);
+        Assert.assertEquals(givenName, actual);
     }
 
     @Test
@@ -75,10 +75,10 @@ public class CatTest {
 
         // When (we retrieve the data from the cat)
         cat.setBirthDate(givenBirthDate);
-        Date expected = cat.getBirthDate();
+        Date actual = cat.getBirthDate();
 
         // Then (we expect the given data, to match the retrieved data)
-        Assert.assertEquals(givenBirthDate, expected);
+        Assert.assertEquals(givenBirthDate, actual);
     }
 
     @Test
@@ -151,10 +151,10 @@ public class CatTest {
         Integer givenId = 0;
 
         // When (a cat is constructed)
-        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+        Cat sleepy = new Cat(givenName, givenBirthDate, givenId);
 
         // Then (we expect the given data, to match the retrieved data)
-        Assert.assertTrue(cat instanceof Animal);
+        Assert.assertTrue(sleepy instanceof Animal);
     }
 
     @Test
@@ -165,9 +165,9 @@ public class CatTest {
         Integer givenId = 0;
 
         // When (a cat is constructed)
-        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+        Cat sleepy = new Cat(givenName, givenBirthDate, givenId);
 
         // Then (we expect the given data, to match the retrieved data)
-        Assert.assertTrue(cat instanceof Mammal);
+        Assert.assertTrue(sleepy instanceof Mammal);
     }
 }

@@ -2,8 +2,10 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
+import rocks.zipcodewilmington.animals.Mammal;
 import rocks.zipcodewilmington.animals.animal_creation.AnimalFactory;
 
 import java.util.Date;
@@ -13,7 +15,6 @@ import java.util.Date;
  */
 public class AnimalFactoryTest {
     //TODO - Create Test for `Animal createDog(String name, Date birthDate)`
-    //TODO - Create Test for `Animal createCat(String name, Date birthDate)`
 
     @Test
     public void createDogTest() {
@@ -31,14 +32,17 @@ public class AnimalFactoryTest {
 //        System.out.println(givenName + " " + actualName);
         Assert.assertEquals(givenBirthDate, actualBirthDate);
 //        System.out.println(givenBirthDate.toString() + " " + actualBirthDate.toString());
+        Assert.assertTrue(fido instanceof Dog);
     }
+
+    //TODO - Create Test for `Animal createCat(String name, Date birthDate)`
 
     @Test
     public void createCatTest() {
         // Given (dog data construct a cat)
         String givenName = "Luna";
         Date givenBirthDate = new Date(20);
-        Cat luna = AnimalFactory.createCat(givenName, givenBirthDate);
+        Mammal luna = AnimalFactory.createCat(givenName, givenBirthDate);
 
         // When (we retrieve the data from the dog)
         String actualName = luna.getName();
@@ -49,6 +53,7 @@ public class AnimalFactoryTest {
 //        System.out.println(givenName + " " + actualName);
         Assert.assertEquals(givenBirthDate, actualBirthDate);
 //        System.out.println(givenBirthDate.toString() + " " + actualBirthDate.toString());
+        Assert.assertTrue(luna instanceof Cat);
     }
 
 
